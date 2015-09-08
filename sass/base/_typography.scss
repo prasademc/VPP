@@ -1,0 +1,45 @@
+@include font-face($roboto_thin, $font_path, 'roboto-thin');
+@include font-face($roboto_regular, $font_path, 'roboto-regular');
+@include font-face($roboto_light, $font_path, 'roboto-light');
+@include font-face($roboto_medium, $font_path, 'roboto-medium');
+@include font-face($roboto_black, $font_path, 'roboto-black');
+@include font-face($roboto_bold, $font_path, 'roboto-bold');
+@include font-face($robotocondensed_bold, $font_path, 'robotocondensed-bold');
+@include font-face($robotocondensed_light, $font_path, 'robotocondensed-light');
+@include font-face($robotocondensed_regular, $font_path, 'robotocondensed-regular');
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $robotocondensed_bold, $backup_font_family;
+	line-height: 1.125;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 2.250rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.500rem;
+}
+h4 {
+	font-size: 1.125rem;
+}
+h5 {
+	font-family: $roboto_bold, $backup_font_family; 
+	font-size: 1rem;
+	color: $ucsc_white;
+}
+h6 {
+	font-family: $body_font_family;
+	font-size: 0.875rem;
+}
+
+a {
+	font-family: $body_font_family;
+	font-size: 1rem;
+	line-height: 1.125;
+}
+

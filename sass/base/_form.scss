@@ -1,0 +1,28 @@
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+.#{$ns}-input {
+	@include border-radius($default_border_radius);
+  	@include box-shadow(0px, 2px, 0px, $ucsc_lightest_gray, true);
+	border: none;
+	background-color: $ucsc_white;
+	font-size: 0.875rem;
+	line-height: 1.125;
+	padding: 10px $default_padding;
+	color: $ucsc_text_color;
+}
+
+.#{$ns}-button {
+	@include border-radius($default_border_radius);
+  	@include box-shadow();
+	text-align: center;
+	border: none;
+	background-color: $ucsc_darker_gray;
+	font-size: 0.875rem;
+	line-height: 1.125;
+	padding: 10px $default_padding;
+	color: $ucsc_light_gray;
+}

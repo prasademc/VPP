@@ -1,0 +1,127 @@
+/*
+ * flexbox
+ */
+@mixin flex($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+}
+@mixin flex-wrap($wrap: nowrap) {
+  flex-wrap: $wrap;
+}
+@mixin flex-justify-content($justify: space-between) {
+  justify-content: $justify;
+}
+@mixin flex-align-items($align: stretch) {
+  align-items: $align;
+}
+
+
+/*
+ * Box sizing
+ */
+@mixin box-sizing($type: border-box) {
+  box-sizing: $type;
+}
+
+
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+  @if $raw-query {
+    $query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
+    @media #{$query} {
+      @content;
+    }
+  }
+  @else {
+    @error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+//grid units
+@for $i from 1 through 12 {
+  .#{$ns}-box-#{$i}c {
+    width: $grid * $i;
+    margin-right: 5px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/**
+Font face
+**/
+
+@mixin font-face ($fontname, $font_path, $filename, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $fontname;
+    src: url($font_path + '#{$filename}.eot');
+    src: url($font_path + '#{$filename}.eot?#iefix') format('embedded-opentype'),
+         url($font_path + '#{$filename}.woff2') format('woff2'),
+         url($font_path + '#{$filename}.woff') format('woff'),
+         url($font_path + '#{$filename}.ttf') format('truetype'),
+         url($font_path + '#{$filename}.svg##{$fontname}') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+
+  }
+}
+
+/*
+Box Shadow
+ */
+@mixin box-shadow($top: 0px, $left: 1px, $blur: 2px, $color: $ucsc_lightest_gray, $inset: false) {
+  @if $inset {
+    box-shadow: inset $top $left $blur $color;
+  }
+  @else {
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+/*
+Border longhand version
+ */
+@mixin border($width, $style, $color, $sides) {
+  @if($width != "" and $style != "" and $color != "") {
+    @if($sides == "") {
+      border: 0;
+      border-width: $width;
+      border-style: $style;
+      border-color: $color;
+    }
+    @else {
+      @each $side in $sides {
+        @if($side == 'top' or $side == 'right' or $side == 'bottom' or $side == 'left') {
+          border: 0;
+          border-#{$side}-width: $width;
+          border-#{$side}-style: $style;
+          border-#{$side}-color: $color;
+        }
+      }
+    }
+  }
+}
+
+/*
+Clearfix
+ */
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+/*
+Border Radius
+ */
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  background-clip: padding-box;
+}

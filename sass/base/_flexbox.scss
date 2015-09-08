@@ -1,0 +1,131 @@
+//placeholder classes
+%flex-row-start {
+  @include flex($direction: row);
+  @include flex-justify-content($justify: flex-start);
+}
+%flex-row-end {
+  @include flex($direction: row);
+  @include flex-justify-content($justify: flex-end);
+}
+%flex-column {
+  @include flex($direction: column);
+}
+%flex-row {
+  @include flex($direction: row);
+}
+%flex-wrap {
+  @include flex-wrap($wrap: wrap);
+}
+%flex-nowrap {
+  @include flex-wrap($wrap: nowrap);
+}
+%flex-align-stretch {
+  @include flex-align-items($align: stretch);
+}
+%flex-align-center {
+  @include flex-align-items($align: center);
+}
+%flex-align-top {
+  @include flex-align-items($align: flex-start);
+}
+%flex-align-stretch {
+  @include flex-align-items($align: stretch);
+}
+%flex-justify-space-between {
+  @include flex-justify-content($justify: space-between);
+}
+%flex-justify-space-around {
+  @include flex-justify-content($justify: space-around);
+}
+%flex-justify-center {
+  @include flex-justify-content($justify: center);
+}
+%flex-center-vertically {
+  @extend %flex-row;
+  @extend %flex-justify-space-between;
+  @extend %flex-align-center;
+  @extend %flex-nowrap;
+}
+%flex-top-vertically {
+  @extend %flex-row;
+  @extend %flex-justify-space-between;
+  @extend %flex-align-top;
+  @extend %flex-nowrap;
+}
+%flex-wrap-items {
+  @extend %flex-row;
+  @extend %flex-wrap;
+  @extend %flex-justify-center;
+  justify-content: flex-start;
+}
+%flex-nowrap-items {
+  @extend %flex-row;
+  @extend %flex-nowrap;
+  @extend %flex-justify-center;
+}
+
+//classes
+.#{$ns}-flex-switch {
+  display: flex;
+  flex-direction: row;
+}
+.#{$ns}-flex-column {
+  @extend %flex-column;
+  @extend %flex-nowrap;
+}
+.#{$ns}-flex-column-wrap {
+  @extend %flex-column;
+  @extend %flex-wrap;
+}
+.#{$ns}-flex-row {
+  @extend %flex-row;
+  @extend %flex-nowrap;
+}
+.#{$ns}-flex-row-wrap {
+  @extend %flex-row;
+  @extend %flex-wrap;
+}
+.#{$ns}-flex-row-start {
+  @extend %flex-row-start;
+}
+.#{$ns}-flex-row-end {
+  @extend %flex-row-end;
+}
+.#{$ns}-flex-justify-space-between {
+  @extend %flex-justify-space-between;
+}
+.#{$ns}-flex-justify-space-around {
+  @extend %flex-justify-space-around;
+}
+.#{$ns}-flex-justify-center {
+  @extend %flex-justify-center;
+}
+.#{$ns}-flex-align-center {
+  @extend %flex-align-center;
+}
+.#{$ns}-flex-align-top {
+  @extend %flex-align-top;
+}
+.#{$ns}-flex-align-stretch {
+  @extend %flex-align-stretch;
+}
+.#{$ns}-flex-center-vertically {
+  @extend %flex-center-vertically;
+}
+.#{$ns}-flex-top-vertically {
+  @extend %flex-top-vertically;
+}
+.#{$ns}-flex-wrap-items {
+  @extend %flex-wrap-items;
+}
+.#{$ns}-flex-nowrap-items {
+  @extend %flex-nowrap-items;
+}
+@for $i from 1 through 6 {
+  %flex-#{$i} {
+    flex: #{$i};
+  }
+  .#{$ns}-flex-#{$i} {
+    flex: 1 1 auto;
+  }
+}

@@ -1,0 +1,42 @@
+html, body {
+	height: 100%;
+}
+body {
+	@include box-sizing(border-box);
+	@include flex(column);
+	@include flex-align-items();
+	flex-flow: row wrap;
+	min-height: 100vh;
+	font-family: $body_font_family;
+	font-size: 1rem;
+	line-height: 1.125;
+	color: $ucsc_text_color;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: $ucsc_red;
+	&:hover, &:focus, &:active {
+		text-decoration: none;
+	}
+}
+
+ul, ol {
+	list-style: none;
+	margin-bottom: $default_margin;
+	padding: 0;
+
+	li {
+		font-family: $body_font_family;
+		font-size: 0.875rem;
+		line-height: 1.125;
+		color: $ucsc_white;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

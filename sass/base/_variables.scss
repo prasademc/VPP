@@ -1,0 +1,55 @@
+/***
+Namespace 
+***/
+$ns: "ucsctube";
+
+/***
+Grid
+***/
+$grid: 80px;
+
+/***
+Breakpints 
+***/
+$breakpoints: ( 'small': (max-width: 767px), 'medium': (min-width: 768px), 'large': (min-width: 1200px) );
+
+/***
+Colors
+***/
+$ucsc_red: #df2229;
+$ucsc_darker_gray: #2d2e30;
+$ucsc_gray: #6f6f6f;
+$ucsc_light_gray: #e4e4e4;
+$ucsc_lightest_gray: #d3d3d3;
+$ucsc_text_color: #4b4b4b;
+$ucsc_white: #ffffff;
+
+/***
+Margin, Padding, Border radius
+***/
+$default_margin: 20px;
+$default_padding: 20px;
+$default_border_radius: 4px;
+
+/***
+Assets paths
+***/
+$font_path: '../assets/fonts/';
+$image_path: '../assets/images/';
+
+/***
+Fonts
+***/
+$roboto_thin: "roboto-thin";
+$roboto_regular: "roboto-regular";
+$roboto_light: "roboto-light";
+$roboto_medium: "roboto-medium";
+$roboto_black: "roboto-black";
+$roboto_bold: "roboto-bold";
+$robotocondensed_bold: "robotocondensed-bold";
+$robotocondensed_light: "robotocondensed-light";
+$robotocondensed_regular: "robotocondensed-regular";
+
+$backup_font_family: Arial, sans-serif;
+$body_font_family: $roboto_light, $backup_font_family;
+$title_font_family: $roboto_medium, $backup_font_family;
